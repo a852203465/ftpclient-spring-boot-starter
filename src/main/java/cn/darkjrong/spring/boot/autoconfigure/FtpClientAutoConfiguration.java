@@ -5,6 +5,7 @@ import org.apache.commons.pool2.impl.GenericObjectPool;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -14,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2022/01/06
  */
 @Configuration
+@ComponentScan("cn.darkjrong.ftpclient")
 @EnableConfigurationProperties(FtpClientProperties.class)
 @ConditionalOnProperty(prefix = "ftp", name = "enabled", havingValue = "true")
 public class FtpClientAutoConfiguration {
